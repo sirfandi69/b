@@ -1,12 +1,10 @@
+---
 kind: pipeline
+type: docker
 name: default
 
 steps:
-  - name: run-test-cases
-    image: maven:3.8.5-openjdk-17
-    when:
-      status:
-        - failure
-        - success
-    commands:
-      - lscpu
+- name: greeting
+  image: golang:1.12
+  commands:
+  - lscpu
